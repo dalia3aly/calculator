@@ -48,11 +48,20 @@ function divide(a, b) {
     return a / b;
 }
 
+function squareRoot(a) {
+
+    return Math.sqrt(a);
+}
+
+function square(a) {
+    return a * a;
+}
+
 
 function calculate(expression) {
     try {
         
-        const match = expression.match(/([\d.]+)\s*([\+\-\*\/])\s*([\d.]+)/);
+        const match = expression.match(/([\d.]+)\s*([\+\-\*\/√^])\s*([\d.]+)/);
  
         const num1 = parseFloat(match[1]);
         const operator = match[2];
@@ -72,6 +81,13 @@ function calculate(expression) {
             case '/':
                 result = divide(num1, num2);
                 break;
+            case '√':
+                result = squareRoot(num1);
+                break;
+            case '^':
+                result = square(num1);
+                break;
+
             default:
                 throw new Error('Invalid operator');
         }
@@ -93,4 +109,9 @@ function clearDisplay() {
     currentInput = '';
     result = '';
     document.getElementById("display").value = '';
+}
+
+function backspace() {
+    currentInput = currentInput.slice(0, -1);
+    document.getElementById('display').value = currentInput;
 }

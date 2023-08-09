@@ -5,15 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Calculator</title>
         <link rel="stylesheet" href="stylesheet.css">
+       
     </head>
     <body>
 
         <div class="calculator">
-            <input type="text" id="display" readonly>
+            <input type="text" id="display" readonly = "">
 
-            <button onclick="clearDisplay()" id="clear"> CLR </button>
+
            
             <div class="buttons">
+
+                <button onclick="Display('√')" id="ln1"> √ </button>
+                <button onclick="Display('^')" id="ln1"> x² </button>
+                <button onclick="backspace()" id="clear"> DEL </button>
+                <button onclick="clearDisplay()" id="clear"> C </button>
+               
+
                 <button onclick="Display('1')">1</button>
                 <button onclick="Display('2')">2</button>
                 <button onclick="Display('3')">3</button>
@@ -33,7 +41,8 @@
                 <button onclick="Display('0')">0</button>
                 <button onclick="calculate()" id='result'>=</button>
                 <button onclick="Display('/')" id='opr'>÷</button>
-                                      
+           
+                           
             </div>
         </div>
         <script src="script.js"></script>
